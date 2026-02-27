@@ -7,6 +7,8 @@ import { Button } from '@/components/shared/ui/button';
 import {
   Sheet,
   SheetContent,
+  SheetDescription,
+  SheetTitle,
   SheetTrigger,
 } from '@/components/shared/ui/sheet';
 import clsx from 'clsx';
@@ -35,10 +37,10 @@ export const LandingHeader = ({
   return (
     <nav
       className={clsx(
-        'flex items-center justify-between gap-6 p-4 w-full max-w-full container-narrow lg:rounded-lg',
+        'flex items-center justify-between gap-6 p-4 w-full max-w-full',
         fixed ? 'sticky top-4 left-auto right-auto z-50 backdrop-blur-xl' : '',
         fixed && !withBackground ? 'bg-white/50 dark:bg-black/20' : '',
-        withBackground ? 'lg:m-4 justify-self-center' : '',
+        withBackground ? 'justify-self-center' : '',
         withBackground && variant === 'primary'
           ? 'bg-primary-100/20 dark:bg-primary-900/20 border border-primary-100/30 dark:border-primary-900/30'
           : '',
@@ -75,6 +77,10 @@ export const LandingHeader = ({
             </Button>
           </SheetTrigger>
           <SheetContent side="right">
+            <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+            <SheetDescription className="sr-only">
+              Links to the main sections of the site.
+            </SheetDescription>
             <nav className="flex flex-col gap-4 mt-8">{children}</nav>
           </SheetContent>
         </Sheet>

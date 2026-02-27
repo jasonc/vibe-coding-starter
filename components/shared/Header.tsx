@@ -6,7 +6,6 @@ export const Header = ({ className }: { className?: string }) => {
   return (
     <LandingHeader
       className={className}
-      fixed
       withBackground
       variant="primary"
       logoComponent={
