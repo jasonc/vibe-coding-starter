@@ -129,7 +129,10 @@ export default function RootLayout({
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
 
-      <body className="flex flex-col bg-white text-black antialiased dark:bg-gray-950 dark:text-white min-h-screen">
+      <body
+        className="flex flex-col bg-white text-black antialiased dark:bg-gray-950 dark:text-white min-h-screen"
+        suppressHydrationWarning
+      >
         <ThemeProviders>
           <AnalyticsWrapper />
 
