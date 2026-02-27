@@ -6,6 +6,7 @@ import { searchLinks } from '@/data/config/searchLinks';
 
 export const SearchProvider = ({ children }) => {
   const router = useRouter();
+  const searchDocumentsPath = searchLinks.length > 0 ? 'search.json' : false;
 
   const makeRootPath = (path: string) => {
     if (!path.startsWith('/')) {
@@ -18,7 +19,7 @@ export const SearchProvider = ({ children }) => {
   return (
     <KBarSearchProvider
       kbarConfig={{
-        searchDocumentsPath: 'search.json',
+        searchDocumentsPath,
         onSearchDocumentsLoad(json) {
           return [
             ...searchLinks.map((link) => {

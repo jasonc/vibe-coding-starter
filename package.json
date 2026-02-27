@@ -4,11 +4,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "npm run appinfo && cross-env PORT=6006 NODE_OPTIONS='--no-warnings' next dev",
-    "build": "npm run appinfo && next build",
+    "dev": "npm run appinfo && cross-env PORT=6006 NODE_OPTIONS='--no-warnings' next dev --webpack",
+    "build": "npm run appinfo && next build --webpack",
     "serve": "next start",
-    "analyze": "cross-env ANALYZE=true next build",
-    "lint": "next lint --fix --dir pages --dir app --dir components --dir lib --dir layouts --dir scripts",
+    "analyze": "cross-env ANALYZE=true next build --webpack",
+    "lint": "eslint --fix app components lib scripts",
     "pretty": "prettier --write .",
     "appinfo": "node ./scripts/generateAppInfo.mjs"
   },
@@ -51,7 +51,7 @@
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/typography": "^0.5.16",
     "@tanstack/react-table": "^8.21.3",
-    "@types/react-dom": "^19.2.1",
+    "@types/react-dom": "19.2.3",
     "@vercel/analytics": "^1.5.0",
     "@vercel/og": "^0.8.5",
     "class-variance-authority": "^0.7.1",
@@ -66,12 +66,12 @@
     "js-yaml": "^4.1.0",
     "lucide-react": "^0.475.0",
     "mime-types": "^3.0.1",
-    "next": "^15.5.9",
+    "next": "16.1.6",
     "next-themes": "^0.4.6",
     "probe-image-size": "^7.2.3",
-    "react": "^19.2.1",
+    "react": "19.2.4",
     "react-day-picker": "^9.9.0",
-    "react-dom": "^19.2.1",
+    "react-dom": "19.2.4",
     "react-hook-form": "^7.62.0",
     "react-resizable-panels": "^2.1.8",
     "reading-time": "1.5.0",
@@ -96,16 +96,16 @@
     "zod": "^4.1.8"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^15.5.9",
+    "@next/bundle-analyzer": "16.1.6",
     "@svgr/webpack": "^8.1.0",
     "@types/mdx": "^2.0.13",
-    "@types/react": "^19.2.1",
+    "@types/react": "19.2.14",
     "@typescript-eslint/eslint-plugin": "^8.43.0",
     "@typescript-eslint/parser": "^8.43.0",
     "autoprefixer": "^10.4.20",
     "cross-env": "^10.0.0",
     "eslint": "^9.35.0",
-    "eslint-config-next": "^15.5.9",
+    "eslint-config-next": "16.1.6",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
     "husky": "^9.1.7",
@@ -117,12 +117,14 @@
     "vfile": "^6.0.3"
   },
   "overrides": {
-    "react": "^19.2.1",
-    "next": "^15.5.9"
+    "react": "19.2.4",
+    "next": "16.1.6",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3"
   },
   "resolutions": {
-    "react": "^19.2.1",
-    "next": "^15.5.9"
+    "react": "19.2.4",
+    "next": "16.1.6"
   },
   "lint-staged": {
     "*.+(js|jsx|ts|tsx)": [
